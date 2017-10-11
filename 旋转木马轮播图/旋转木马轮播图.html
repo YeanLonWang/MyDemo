@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转木马轮播图</title>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+<div class="wrap" id="wrap">
+    <div class="slide" id="slide">
+        <ul>
+            <li><a href="#"><img src="images/slidepic1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/slidepic2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/slidepic3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/slidepic4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="images/slidepic5.jpg" alt=""/></a></li>
+        </ul>
+        <div class="arrow" id="arrow">
+            <a href="javascript:;" class="prev"></a>
+            <a href="javascript:;" class="next"></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="js/aniamte.js" type="text/javascript"></script>
+<script>
+    var wrap = $("wrap");
+    var slide = $("slide");
+    var arrow = $("arrow");
+    var lis = document.getElementsByTagName("li");
+    wrap.onmouseover = function(){
+        animate(arrow,{opacity:100})
+    }
+    wrap.onmouseout = function (){
+        animate(arrow,{opacity:0})
+    }
+    var json = [
+        {   //  1
+            width:400,
+            top:10,
+            left:50,
+            opacity:20,
+            z:2
+        },
+        {  // 2
+            width:600,
+            top:50,
+            left:0,
+            opacity:80,
+            z:3
+        },
+        {   // 3
+            width:800,
+            top:70,
+            left:200,
+            opacity:100,
+            z:4
+        },
+        {  // 4
+            width:600,
+            top:50,
+            left:600,
+            opacity:80,
+            z:3
+        },
+        {   //5
+            width:400,
+            top:10,
+            left:750,
+            opacity:20,
+            z:2
+        }
+    ];
+    var ac = arrow.children;
+    var jieliu = true;
+    change();
+    for (var k in ac ){
+        ac[k].onclick = function(){
+            if (this.className == "prev"){
+                if (jieliu == true) {
+                    change(false);
+                    jieliu = false;
+                }
+            }else {
+                if (jieliu == true) {
+                    change(true);
+                    jieliu = false;
+                }
+            }
+        }
+    }
+    function change (flag){
+        if (flag)
+        {
+            json.unshift(json.pop())
+        }else{
+            json.push(json.shift())
+        }
+        for (var i =0; i< lis.length ; i++){
+            animate(lis[i],{
+                width:json[i].width,
+                top:json[i].top,
+                left:json[i].left,
+                opacity:json[i].opacity,
+                zIndex:json[i].z
+            },function(){ jieliu = true;})
+        }
+    }
+
+</script>
