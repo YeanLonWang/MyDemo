@@ -1,0 +1,214 @@
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { margin:0; padding:0; }
+fieldset, img,input,button { border:none; padding:0;margin:0;outline-style:none; }
+ul, ol { list-style:none; }
+input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";}
+select, input { vertical-align:middle; }
+select, input, textarea { font-size:12px; margin:0; }
+textarea { resize:none; }
+img {border:0;	vertical-align:middle;}
+table { border-collapse:collapse; }
+body {
+    font:12px/150% Arial,Verdana,"\5b8b\4f53";
+    color:#666;
+    background:#fff
+}
+.clearfix:before,.clearfix:after{
+    content:"";
+    display:table;
+}
+.clearfix:after{clear:both;}
+.clearfix{
+    *zoom:1;/*IE/7/6*/
+}
+a{color:#666; text-decoration:none; }
+a:hover{color:#C81623;}
+h1,h2,h3,h4,h5,h6{text-decoration:none;font-weight:normal;}
+s,i,em{font-style:normal;text-decoration:none;}
+.col-red{color: #C81623!important;}
+
+/*公共类*/
+.w{
+    width: 1210px;margin:0 auto;
+}
+.fl {
+    float:left
+}
+.fr {
+    float:right
+}
+.al {
+    text-align:left
+}
+.ac {
+    text-align:center
+}
+.ar {
+    text-align:right
+}
+.hide {
+    display:none
+}
+/*首页内容开始*/
+/*页面通栏开始*/
+.banner {
+    position: relative;
+}
+.banner a {
+    position: absolute;
+    top: 227px;
+    left: 0;
+    width: 100%;
+    height: 604px;
+    background: url("../images/banner.jpg") no-repeat top center;
+}
+.main .slider {
+    width: 730px;
+    height: 453px;
+    margin:12px 0 0 220px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+.slider .scrpic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2000%;
+}
+.slider .scrpic li {
+    float: left;
+    width: 730px;
+    height: 453px;
+}
+.slider .circle {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -66px;
+}
+.slider .circle li {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #3E3E3E;
+    float: left;
+    text-align: center;
+    line-height: 18px;
+    color: #fff;
+    margin:0 2px;
+    cursor: pointer;
+}
+.slider .circle .current {
+    background-color: #B61B1F;
+}
+.slider .arrow-l ,
+.slider .arrow-f {
+    position: absolute;
+    width: 28px;
+    height: 62px;
+    top: 50%;
+    margin-top: -31px;
+    color: #fff;
+    font:500 18px/62px "simsun";
+    text-align: center;
+    background: rgba(0,0,0,.2);
+    display: none;
+}
+.slider .arrow-l {
+    left: 0;
+}
+.slider .arrow-f{
+    right: 0;
+}
+.news {
+    width: 248px;
+    height: 451px;
+    border:1px solid #e4e4e4;
+    float: right;
+    margin-top: 12px;
+    position: relative;
+    z-index: 2;
+}
+.news .jd-news {
+    height: 200px;
+    border-bottom:1px dashed #e4e4e4;
+}
+.news .jd-news .dt,
+.news .life .dt
+{
+    height: 43px;
+    border-bottom:1px dotted #E8E8E7;
+    line-height: 43px;
+}
+.jd-news .dt h3 ,
+.life .dt h3
+{
+    float: left;
+    font:14px/43px "microsoft yahei";
+    color:#666;
+    padding-left: 15px;
+}
+.jd-news .dt a {
+    float: right;
+    font:13px/43px "simsun";
+    margin-right: 15px;
+}
+.jd-news .dd ul {
+    padding:8px 0 0 15px;
+}
+.jd-news .dd li {
+    line-height:28px;
+}
+.jd-news .dd span {
+    font-weight: 700;
+    margin-right: 5px;
+}
+.life {
+    overflow: hidden;
+}
+.life ul {
+    width: 252px;
+}
+.life ul li {
+    width: 62px;
+    height: 68px;
+    border:1px solid #e4e4e4;
+    border-top: 0;
+    float: left;
+    margin-left: -1px;
+}
+.life li a {
+    display: block;
+    height: 70px;
+    text-align: center;
+    padding-top: 44px;
+    position: relative;
+}
+.life li i {
+    position: absolute;
+    top: 10px;
+    left: 18px;
+    width: 25px;
+    height: 25px;
+    background: url("../images/spriteicon.png") no-repeat right top;
+}
+.huodong {
+    position: relative;
+}
+.hd {
+    margin:10px 0 28px 0;
+}
+.hd-r {
+    width: 1000px;
+    height: 160px;
+    float: right;
+}
+.hd-r ul {
+    width: 500%;
+}
+.hd-r li {
+    float: left;
+    margin-right: 1px;
+}
